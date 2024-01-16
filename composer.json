@@ -1,0 +1,15 @@
+{
+    "name": "daniyal.naeem/phpmvc",
+    "authors": [
+        {
+            "name": "Daniyal Khan",
+            "email": "daniyalkhan.dk1991@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
