@@ -22,9 +22,3 @@ $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->post('/register', [AuthController::class, 'register']);
 
 $app->run();
-
-
-/*echo '<pre>';
-var_dump();
-echo '</pre>';
-exit;*/

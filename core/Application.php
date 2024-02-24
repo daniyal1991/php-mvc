@@ -14,12 +14,10 @@ class Application
     public function __construct($root_path) {
         self::$ROOT_DIR = $root_path;
         self::$app = $this;
-        //full path app\core\Request() not required bcz both Application and Request are in same namespace
-        $this->request = new Request();
+        $this->request = new Request(); //full path app\core\Request() not required bcz both Application and Request are in same namespace
         $this->response = new Response();
 
-        //passing Request & Response class instances to Router class
-        $this->router = new Router($this->request, $this->response);
+        $this->router = new Router($this->request, $this->response); //passing Request & Response class instances to Router class
     }
 
     public function run() {

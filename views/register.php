@@ -1,4 +1,4 @@
-<h1>Register</h1>
+<h1>Create an Account</h1>
 
 <form action="" method="post">
     <div class="row">

@@ -38,12 +38,17 @@ class Router
             return $this->renderView($callback);
         }
 
+        //Needs this condition bcz call_user_func calls array callback parameter statically
+        // e.g. [SiteController::class, 'home'] --> SiteController::home
         if (is_array($callback)) {
-            Application::$app->controller = new $callback[0]; //creating instance of controller class
+            //$callback[0] is controller name e.g. SiteController or it can be $callback[0] = new $callback[0]
+            //creating instance of controller class so it can be used in other methods in Router class
+            Application::$app->controller = new $callback[0];
             $callback[0] = Application::$app->controller; //converting first index of callback from string to object
         }
 
         return call_user_func($callback, $this->request);
+        //By passing $this->request, we can get 'Request $request' in any controller method
     }
 
     public function renderView($view, $params=[]) {

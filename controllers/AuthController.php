@@ -27,7 +27,9 @@ class AuthController extends Controller
                 return 'success';
             }
 
-            return $this->render('register');
+            return $this->render('register',[
+
+            ]);
         }
 
         $this->setLayout('auth');
